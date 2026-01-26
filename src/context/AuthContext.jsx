@@ -13,7 +13,12 @@ export const AuthProvider = ({ children }) => {
         // Check for persisted user session (simple mechanism for this custom auth)
         const storedUser = localStorage.getItem('expense_user');
         if (storedUser) {
-            setUser(JSON.parse(storedUser));
+            try {
+                setUser(JSON.parse(storedUser));
+            } catch (error) {
+                console.error("Failed to parse stored user:", error);
+                localStorage.removeItem('expense_user');
+            }
         }
         setLoading(false);
     }, []);
@@ -148,7 +153,7 @@ export const AuthProvider = ({ children }) => {
 
     return (
         <AuthContext.Provider value={{ user, login, register, logout, updateProfile, verifyUser, resetPin, loading }}>
-            {!loading && children}
+            {children}
         </AuthContext.Provider>
     );
 };
