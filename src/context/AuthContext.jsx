@@ -58,6 +58,17 @@ export const AuthProvider = ({ children }) => {
                 return { success: false, error: 'PIN already exists. Please choose another.' };
             }
 
+            // check for phone number
+            const { data: existingPhone } = await supabase
+                .from('users')
+                .select('id')
+                .eq('phone_number', userData.phone_number)
+                .single();
+
+            if (existingPhone) {
+                return { success: false, error: 'Phone number already registered' };
+            }
+
             const { data, error } = await supabase
                 .from('users')
                 .insert([userData])
