@@ -38,6 +38,9 @@ export const Login = () => {
                 animate={{ opacity: 1, y: 0 }}
                 style={{ width: '100%', maxWidth: '400px', background: '#fff', padding: '2rem', borderRadius: '24px', boxShadow: 'var(--shadow-lg)' }}
             >
+                <div style={{ display: 'flex', justifyContent: 'flex-start', marginBottom: '1rem' }}>
+                    <img src="/assets/logo.png" alt="Expense Flow" style={{ height: '1.8rem', objectFit: 'contain' }} />
+                </div>
                 <h1 className="text-2xl font-bold text-center" style={{ marginBottom: '0.5rem' }}>Welcome Back</h1>
                 <p className="text-center text-secondary" style={{ marginBottom: '2rem' }}>Enter your PIN to continue</p>
 

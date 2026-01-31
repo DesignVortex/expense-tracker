@@ -14,7 +14,7 @@ export const Header = () => {
         <div style={{ marginBottom: '1.5rem' }}>
             {/* Top Row: App Name + Date Pill */}
             <div className="flex-between">
-                <h1 className="text-xl font-bold" style={{ color: '#000' }}>Expense Flow</h1>
+                <img src="/assets/logo.png" alt="Expense Flow" style={{ height: '1.5rem', objectFit: 'contain' }} />
                 <div style={{
                     backgroundColor: 'var(--accent-green-pill)',
                     padding: '0.4rem 1rem',
