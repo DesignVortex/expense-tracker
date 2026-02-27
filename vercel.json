@@ -2,7 +2,7 @@
     "rewrites": [
         {
             "source": "/supabase/(.*)",
-            "destination": "https://kfupiuesnwfsczcgjlir.supabase.co/rest/v1/$1"
+            "destination": "https://kfupiuesnwfsczcgjlir.supabase.co/$1"
         },
         {
             "source": "/(.*)",
